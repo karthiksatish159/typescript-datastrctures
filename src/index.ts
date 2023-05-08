@@ -1,21 +1,25 @@
 class Sorter
 {
-    constructor(public collection:number[])
+    constructor(public collection:number[]|string)
     {
         this.collection=collection;
     }
     sort():void
     {
         const {length}=this.collection;
-        for(let i=0;i<length;i++)
+        //This part work for only number[]
+        if(this.collection instanceof Array)
         {
-            for(let j=0;j<length-i-1;j++)
+            for(let i=0;i<length;i++)
             {
-                if(this.collection[j]>this.collection[j+1])
+                for(let j=0;j<length-i-1;j++)
                 {
-                    this.collection[j]=this.collection[j]+this.collection[j+1];
-                    this.collection[j+1]=this.collection[j]-this.collection[j+1];
-                    this.collection[j]=this.collection[j]-this.collection[j+1];
+                    if(this.collection[j]>this.collection[j+1])
+                    {
+                        this.collection[j]=this.collection[j]+this.collection[j+1];
+                        this.collection[j+1]=this.collection[j]-this.collection[j+1];
+                        this.collection[j]=this.collection[j]-this.collection[j+1];
+                    }
                 }
             }
         }
