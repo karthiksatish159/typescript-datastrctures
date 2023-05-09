@@ -1,6 +1,11 @@
 import { Sorter } from "./Sorter";
 import { NumbersCollection } from "./NumbersCollection";
+import { CharacterCollection } from "./CharactersCollection";
 const numberscollection=new NumbersCollection([0,10,5,-1]);
-const sorter=new Sorter(numberscollection);
-sorter.sort();
+const characterscollection=new CharacterCollection("XaaZbB");
+const numbers_sorter=new Sorter(numberscollection);
+const characters_sorter=new Sorter(characterscollection);
+numbers_sorter.sort();
+characters_sorter.sort();
 console.log(numberscollection.data);
+console.log(characterscollection.data);
